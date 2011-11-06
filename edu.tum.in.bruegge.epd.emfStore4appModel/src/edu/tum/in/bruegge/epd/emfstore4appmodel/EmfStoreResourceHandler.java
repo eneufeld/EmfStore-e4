@@ -75,6 +75,6 @@ public class EmfStoreResourceHandler implements IModelResourceHandler {
 	@Override
 	public void save() throws IOException {
 		System.out.println("save");
-		EmfStoreHelper.INSTANCE.commit();
+//		EmfStoreHelper.INSTANCE.commit();
 	}
 }
