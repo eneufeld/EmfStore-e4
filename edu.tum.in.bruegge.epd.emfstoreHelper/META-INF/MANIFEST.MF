@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EmfstoreHelper
+Bundle-SymbolicName: edu.tum.in.bruegge.epd.emfstoreHelper;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: edu.tum.in.bruegge.epd.emfstorehelper.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.emfstore.client;bundle-version="0.8.9"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: edu.tum.in.bruegge.epd.emfstore.helper
