@@ -7,6 +7,8 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.services.log.Logger;
@@ -56,17 +58,16 @@ public class EmfStoreResourceHandler implements IModelResourceHandler {
 		
 		EObject appModel = EmfStoreHelper.INSTANCE.getRoot();
 		MApplication appElement = (MApplication) appModel;
-		
-		Resource resource = new E4XMIResource(); // new XMIResourceImpl()
+		/**convert xmiresource to e4xmiresource**/
+		Resource resource = new E4XMIResource(appModel.eResource().getURI()); // new XMIResourceImpl()
 		resource.getContents().add(appModel);
-		resource.setURI(this.applicationDefinitionInstance);
 		
+		Activator.getDefault().getLog().log(new Status(IStatus.INFO, Activator.PLUGIN_ID, appModel.eResource().getURI().toString()));
 
-		
 		this.context.set(MApplication.class, appElement);
 		/**loads Code from fragments and modifies model; not necessary in our scenario right now**/
-//		ModelAssembler contribProcessor = ContextInjectionFactory.make(ModelAssembler.class, this.context);
-//		contribProcessor.processModel();
+		ModelAssembler contribProcessor = ContextInjectionFactory.make(ModelAssembler.class, this.context);
+		contribProcessor.processModel();
 		
 		return resource;
 	}
@@ -74,6 +75,6 @@ public class EmfStoreResourceHandler implements IModelResourceHandler {
 	@Override
 	public void save() throws IOException {
 		System.out.println("save");
-		// TODO commit()
+		EmfStoreHelper.INSTANCE.commit();
 	}
 }
