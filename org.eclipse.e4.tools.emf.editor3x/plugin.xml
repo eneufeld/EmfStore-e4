@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="org.eclipse.e4.tools.emf.editor3x.E4WorkbenchModelEditor"
+            default="true"
+            extensions="e4xmi"
+            icon="icons/full/obj16/application_view_tile.png"
+            id="org.eclipse.e4.tools.emf.editor3x.e4wbm"
+            name="%editor.name">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.e4.tools.emf.ui.editors">
+      <contributionClassCreator
+            class="org.eclipse.e4.tools.emf.editor3x.extension.HandlerContributionEditor">
+      </contributionClassCreator>
+      <contributionClassCreator
+            class="org.eclipse.e4.tools.emf.editor3x.extension.PartContributionEditor">
+      </contributionClassCreator>
+      <contributionClassCreator
+            class="org.eclipse.e4.tools.emf.editor3x.extension.AddonContributionEditor">
+      </contributionClassCreator>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="org.eclipse.e4.tools.emf.editor3x.ModelEditorPreferencePage"
+            id="org.eclipse.e4.tools.emf.editor3x.modeleditor"
+            name="%page.name">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.ltk.core.refactoring.renameParticipants">
+      <renameParticipant
+            class="org.eclipse.e4.tools.emf.editor3x.ClassRenameParticipant"
+            id="org.eclipse.e4.tools.emf.editor3x.renameParticipant"
+            name="Workbench Model Contribution Participant">
+         <enablement>
+	  	  <with variable="affectedNatures">
+	  	    <iterate operator="or">
+	  	      <equals value="org.eclipse.pde.PluginNature"/>
+	  	    </iterate>
+	  	  </with>
+	  	  <with variable="element">
+		  	 <instanceof value="org.eclipse.jdt.core.IType"/>
+	  	  </with>
+	  	</enablement>
+      </renameParticipant>
+   </extension>
+   <extension
+         point="org.eclipse.ltk.core.refactoring.moveParticipants">
+      <moveParticipant
+            class="org.eclipse.e4.tools.emf.editor3x.ClassMoveParticipant"
+            id="org.eclipse.e4.tools.emf.editor3x.moveParticipant"
+            name="Workbench Model Contribution Participant">
+         <enablement>
+	  	  <with variable="affectedNatures">
+	  	    <iterate operator="or">
+	  	      <equals value="org.eclipse.pde.PluginNature"/>
+	  	    </iterate>
+	  	  </with>
+	  	  <with variable="element">
+		  	 <instanceof value="org.eclipse.jdt.core.IType"/>
+	  	  </with>
+	  	</enablement>
+      </moveParticipant>
+   </extension>
+
+</plugin>
