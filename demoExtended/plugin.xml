@@ -19,10 +19,6 @@
                name="applicationCSS"
                value="platform:/plugin/demoExtended/css/default.css">
          </property>
-         <property
-               name="modelResourceHandler"
-               value="platform:/plugin/edu.tum.in.bruegge.epd.emfStore4appModel/edu.tum.in.bruegge.epd.emfstore4appmodel.EmfStoreResourceHandler">
-         </property>
       </product>
    </extension>
 

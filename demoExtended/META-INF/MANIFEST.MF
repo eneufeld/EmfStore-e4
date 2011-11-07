@@ -5,7 +5,6 @@ Bundle-SymbolicName: demoExtended; singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: demoextended.Activator
 Require-Bundle: javax.inject;bundle-version="1.0.0",
- edu.tum.in.bruegge.epd.emfStore4appModel;visibility:=reexport,
  org.eclipse.core.resources;bundle-version="3.7.100",
  org.eclipse.core.runtime;bundle-version="3.7.0",
  org.eclipse.swt;bundle-version="3.7.0",

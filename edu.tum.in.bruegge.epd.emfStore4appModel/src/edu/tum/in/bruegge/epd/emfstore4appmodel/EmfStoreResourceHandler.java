@@ -37,10 +37,12 @@ public class EmfStoreResourceHandler implements IModelResourceHandler {
 		EObject appModel = EmfStoreHelper.INSTANCE.getRoot();
 		MApplication appElement = (MApplication) appModel;
 		
-		// Convert XMIResource from EMFStore to E4XMIResource required by several Eclipse Plugins
+		// Convert XMIResource from EMFStore to E4XMIResource (required by several Eclipse Plugins)
 		Resource resource = new E4XMIResource(appModel.eResource().getURI());
 		resource.getContents().add(appModel);
-		ResourceSet resourceSet=new ResourceSetImpl();
+		
+		// Add resource to ResourceSet (required by Eclipse Plugins)
+		ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.getResources().add(resource);
 		
 		logger.info("EMFStore Resource URI: " + appModel.eResource().getURI().toString());

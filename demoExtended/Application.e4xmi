@@ -9,7 +9,7 @@
       </children>
     </children>
     <mainMenu xmi:id="_h1ZyqAZ3EeG0zNGou8Wmdw" elementId="menu:org.eclipse.ui.main.menu">
-      <children xsi:type="menu:Menu" xmi:id="_h1ZyqQZ3EeG0zNGou8Wmdw" elementId="demo.file" label="File">
+      <children xsi:type="menu:Menu" xmi:id="_h1ZyqQZ3EeG0zNGou8Wmdw" label="File">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_h1ZyqgZ3EeG0zNGou8Wmdw" label="Open" iconURI="platform:/plugin/demoExtended/icons/sample.gif" command="_h1ZyngZ3EeG0zNGou8Wmdw"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_h1ZyqwZ3EeG0zNGou8Wmdw" label="Save" iconURI="platform:/plugin/demoExtended/icons/save_edit.gif" command="_h1ZyoQZ3EeG0zNGou8Wmdw"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_h1ZyrAZ3EeG0zNGou8Wmdw" label="Quit" command="_h1ZymgZ3EeG0zNGou8Wmdw"/>
@@ -22,7 +22,6 @@
       <children xsi:type="menu:ToolBar" xmi:id="_h1aZpAZ3EeG0zNGou8Wmdw" elementId="toolbar:org.eclipse.ui.main.toolbar">
         <children xsi:type="menu:HandledToolItem" xmi:id="_h1aZpQZ3EeG0zNGou8Wmdw" iconURI="platform:/plugin/demoExtended/icons/sample.gif" command="_h1ZyngZ3EeG0zNGou8Wmdw"/>
         <children xsi:type="menu:HandledToolItem" xmi:id="_h1aZpgZ3EeG0zNGou8Wmdw" iconURI="platform:/plugin/demoExtended/icons/save_edit.gif" command="_h1ZyoQZ3EeG0zNGou8Wmdw"/>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_2VYLgAfcEeG63JTD0YeiQA" label="Update" iconURI="platform:/plugin/demoExtended/icons/sample.gif" command="_iFhnAAfcEeG63JTD0YeiQA"/>
       </children>
     </trimBars>
   </children>
@@ -30,7 +29,6 @@
   <handlers xmi:id="_h1ZynwZ3EeG0zNGou8Wmdw" contributionURI="platform:/plugin/demoExtended/demoextended.handlers.OpenHandler" command="_h1ZyngZ3EeG0zNGou8Wmdw"/>
   <handlers xmi:id="_h1ZyogZ3EeG0zNGou8Wmdw" contributionURI="platform:/plugin/demoExtended/demoextended.handlers.SaveHandler" command="_h1ZyoQZ3EeG0zNGou8Wmdw"/>
   <handlers xmi:id="_h1ZypQZ3EeG0zNGou8Wmdw" contributionURI="platform:/plugin/demoExtended/demoextended.handlers.AboutHandler" command="_h1ZypAZ3EeG0zNGou8Wmdw"/>
-  <handlers xmi:id="_c_PCoAfcEeG63JTD0YeiQA" contributionURI="platform:/plugin/edu.tum.in.bruegge.epd.emfStore4appModel/edu.tum.in.bruegge.epd.emfstore4appmodel.UpdateHandler" command="_iFhnAAfcEeG63JTD0YeiQA"/>
   <bindingTables xmi:id="_h1ZynAZ3EeG0zNGou8Wmdw" bindingContext="_h1ZykQZ3EeG0zNGou8Wmdw">
     <bindings xmi:id="_h1ZynQZ3EeG0zNGou8Wmdw" keySequence="Ctrl+Q" command="_h1ZymgZ3EeG0zNGou8Wmdw"/>
     <bindings xmi:id="_h1ZyoAZ3EeG0zNGou8Wmdw" keySequence="Ctrl+O" command="_h1ZyngZ3EeG0zNGou8Wmdw"/>
@@ -45,7 +43,6 @@
   <commands xmi:id="_h1ZyngZ3EeG0zNGou8Wmdw" elementId="demoExtended.openCommand" commandName="openCommand"/>
   <commands xmi:id="_h1ZyoQZ3EeG0zNGou8Wmdw" elementId="demoExtended.saveCommand" commandName="saveCommand"/>
   <commands xmi:id="_h1ZypAZ3EeG0zNGou8Wmdw" elementId="demoExtended.aboutCommand" commandName="aboutCommand"/>
-  <commands xmi:id="_iFhnAAfcEeG63JTD0YeiQA" elementId="edu.tum.in.bruegge.epd.emfStore4appModel.updateCommand" commandName="updateCommand"/>
   <addons xmi:id="_h1ZylAZ3EeG0zNGou8Wmdw" elementId="org.eclipse.e4.core.commands.service" contributionURI="platform:/plugin/org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_h1ZylQZ3EeG0zNGou8Wmdw" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="platform:/plugin/org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_h1ZylgZ3EeG0zNGou8Wmdw" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="platform:/plugin/org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
