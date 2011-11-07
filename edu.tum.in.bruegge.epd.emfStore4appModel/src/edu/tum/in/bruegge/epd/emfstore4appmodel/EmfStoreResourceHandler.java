@@ -15,6 +15,8 @@ import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.e4.ui.workbench.IModelResourceHandler;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.emfstore.client.model.ProjectSpace;
 
 import edu.tum.in.bruegge.epd.emfstore.helper.EmfStoreHelper;
@@ -38,6 +40,8 @@ public class EmfStoreResourceHandler implements IModelResourceHandler {
 		// Convert XMIResource from EMFStore to E4XMIResource required by several Eclipse Plugins
 		Resource resource = new E4XMIResource(appModel.eResource().getURI());
 		resource.getContents().add(appModel);
+		ResourceSet resourceSet=new ResourceSetImpl();
+		resourceSet.getResources().add(resource);
 		
 		logger.info("EMFStore Resource URI: " + appModel.eResource().getURI().toString());
 		
