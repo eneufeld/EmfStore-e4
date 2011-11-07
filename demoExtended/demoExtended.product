@@ -15,6 +15,7 @@
    <plugins>
       <plugin id="com.ibm.icu"/>
       <plugin id="demoExtended"/>
+      <plugin id="edu.tum.in.bruegge.epd.emfStore4appModel"/>
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>
       <plugin id="org.apache.batik.css"/>
