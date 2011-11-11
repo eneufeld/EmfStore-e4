@@ -67,7 +67,7 @@ public class EmfStoreModelResource implements IModelResource {
 		try {
 
 			// resource.save(map);
-			EmfStoreHelper.INSTANCE.commit();
+			// EmfStoreHelper.INSTANCE.commit();
 			editingDomain.getCommandStack().flush();
 			dirty = false;
 			fireDirtyChanged();

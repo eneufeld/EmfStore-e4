@@ -7,6 +7,10 @@
             id="edu.tum.in.brueege.epd.emfStoreUpdate"
             name="Update">
       </command>
+      <command
+            id="edu.tum.in.brueege.epd.emfStoreCommit"
+            name="Commit">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.menus">
@@ -33,13 +37,37 @@
                </with>
             </visibleWhen>
          </command>
+         <command
+               commandId="edu.tum.in.brueege.epd.emfStoreCommit"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="selection">
+                  <iterate
+                        ifEmpty="false">
+                     <adapt
+                           type="org.eclipse.core.resources.IResource">
+                        <test
+                              property="org.eclipse.core.resources.name"
+                              value="*.e4xmi">
+                        </test>
+                     </adapt>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
       </menuContribution>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
       <handler
-            class="edu.tum.in.bruegge.epd.emfstorehelper.EmfUpdateHandler"
+            class="edu.tum.in.bruegge.epd.emfstore.handler.UpdateProjectHandler"
             commandId="edu.tum.in.brueege.epd.emfStoreUpdate">
+      </handler>
+      <handler
+            class="edu.tum.in.bruegge.epd.emfstore.handler.CommitProjectHandler"
+            commandId="edu.tum.in.brueege.epd.emfStoreCommit">
       </handler>
    </extension>
 

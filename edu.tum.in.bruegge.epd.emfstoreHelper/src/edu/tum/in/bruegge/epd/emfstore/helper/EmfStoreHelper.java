@@ -144,4 +144,8 @@ public class EmfStoreHelper {
 		}
 	}
 
+	public ProjectSpace getProjectSpace() {
+		return projectSpace;
+	}
+
 }

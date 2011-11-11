@@ -6,7 +6,12 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: edu.tum.in.bruegge.epd.emfstorehelper.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.emf.emfstore.client;bundle-version="0.8.9"
+ org.eclipse.emf.emfstore.client;bundle-version="0.8.9",
+ org.eclipse.emf.edit.ui;bundle-version="2.7.0",
+ org.eclipse.emf.emfstore.server.model.edit;bundle-version="0.8.9",
+ org.eclipse.ui.forms;bundle-version="3.5.100"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: edu.tum.in.bruegge.epd.emfstore.helper
+Bundle-ClassPath: lib/dmp.jar,
+ .
