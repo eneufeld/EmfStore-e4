@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            name="edu.tum.in.bruegge.demo_wo_fragment"
+            application="org.eclipse.e4.ui.workbench.swt.E4Application">
+         <property
+               name="appName"
+               value="edu.tum.in.bruegge.demo_wo_fragment">
+         </property>
+         <property
+               name="applicationXMI"
+               value="edu.tum.in.bruegge.epd.demo_wo_fragment/Application.e4xmi">
+         </property>
+         <property
+               name="applicationCSS"
+               value="platform:/plugin/edu.tum.in.bruegge.epd.demo_wo_fragment/css/default.css">
+         </property>
+         <property
+               name="modelResourceHandler"
+               value="platform:/plugin/edu.tum.in.bruegge.epd.emfstoreHelper/edu.tum.in.bruegge.epd.emfstore.helper.EmfStoreResourceHandler">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

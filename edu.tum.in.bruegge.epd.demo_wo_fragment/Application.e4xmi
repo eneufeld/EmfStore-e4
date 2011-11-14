@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_3bOuAA7nEeGoWoGzNid8xQ" elementId="org.eclipse.e4.ide.application" bindingContexts="_3bOuDg7nEeGoWoGzNid8xQ">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_3bOuGQ7nEeGoWoGzNid8xQ" label="edu.tum.in.bruegge.demo_wo_fragment" width="500" height="400">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_3bOuAw7nEeGoWoGzNid8xQ">
+      <children xsi:type="advanced:Perspective" xmi:id="_3bOuCg7nEeGoWoGzNid8xQ">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_3bOuHg7nEeGoWoGzNid8xQ">
+          <children xsi:type="basic:PartStack" xmi:id="_3bOuEw7nEeGoWoGzNid8xQ"/>
+        </children>
+      </children>
+    </children>
+    <mainMenu xmi:id="_3bOuIA7nEeGoWoGzNid8xQ" elementId="menu:org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_3bOuAg7nEeGoWoGzNid8xQ" label="File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_3bOuGA7nEeGoWoGzNid8xQ" label="Open" iconURI="platform:/plugin/edu.tum.in.bruegge.epd.demo_wo_fragment/icons/sample.gif" command="_3bOuAQ7nEeGoWoGzNid8xQ"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_3bOuBw7nEeGoWoGzNid8xQ" label="Save" iconURI="platform:/plugin/edu.tum.in.bruegge.epd.demo_wo_fragment/icons/save_edit.gif" command="_3bOuFQ7nEeGoWoGzNid8xQ"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_3bOuHQ7nEeGoWoGzNid8xQ" label="Quit" command="_3bOuGw7nEeGoWoGzNid8xQ"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_3bOuEA7nEeGoWoGzNid8xQ" label="Help">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_3bOuJw7nEeGoWoGzNid8xQ" label="About" command="_3bOuJA7nEeGoWoGzNid8xQ"/>
+      </children>
+    </mainMenu>
+    <trimBars xmi:id="_3bOuKA7nEeGoWoGzNid8xQ">
+      <children xsi:type="menu:ToolBar" xmi:id="_3bOuCw7nEeGoWoGzNid8xQ" elementId="toolbar:org.eclipse.ui.main.toolbar">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_3bOuJg7nEeGoWoGzNid8xQ" iconURI="platform:/plugin/edu.tum.in.bruegge.epd.demo_wo_fragment/icons/sample.gif" command="_3bOuAQ7nEeGoWoGzNid8xQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_3bOuFA7nEeGoWoGzNid8xQ" iconURI="platform:/plugin/edu.tum.in.bruegge.epd.demo_wo_fragment/icons/save_edit.gif" command="_3bOuFQ7nEeGoWoGzNid8xQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_3bOuJQ7nEeGoWoGzNid8xQ" label="Update" iconURI="platform:/plugin/edu.tum.in.bruegge.epd.demo_wo_fragment/icons/sample.gif" tooltip="Update" command="_3bOuBQ7nEeGoWoGzNid8xQ"/>
+      </children>
+    </trimBars>
+  </children>
+  <handlers xmi:id="_3bOuFg7nEeGoWoGzNid8xQ" contributionURI="platform:/plugin/edu.tum.in.bruegge.demo_wo_fragment/edu.tum.in.bruegge.epd.demo.handlers.QuitHandler" command="_3bOuGw7nEeGoWoGzNid8xQ"/>
+  <handlers xmi:id="_3bOuFw7nEeGoWoGzNid8xQ" contributionURI="platform:/plugin/edu.tum.in.bruegge.demo_wo_fragment/edu.tum.in.bruegge.epd.demo.handlers.OpenHandler" command="_3bOuAQ7nEeGoWoGzNid8xQ"/>
+  <handlers xmi:id="_3bOuHw7nEeGoWoGzNid8xQ" contributionURI="platform:/plugin/edu.tum.in.bruegge.demo_wo_fragment/edu.tum.in.bruegge.epd.demo.handlers.SaveHandler" command="_3bOuFQ7nEeGoWoGzNid8xQ"/>
+  <handlers xmi:id="_3bOuDA7nEeGoWoGzNid8xQ" contributionURI="platform:/plugin/edu.tum.in.bruegge.demo_wo_fragment/edu.tum.in.bruegge.epd.demo.handlers.AboutHandler" command="_3bOuJA7nEeGoWoGzNid8xQ"/>
+  <handlers xmi:id="_3bOuIw7nEeGoWoGzNid8xQ" contributionURI="platform:/plugin/edu.tum.in.bruegge.epd.emfstoreHelper/edu.tum.in.bruegge.epd.emfstore.handler.UpdateProjectHandler" command="_3bOuBQ7nEeGoWoGzNid8xQ"/>
+  <bindingTables xmi:id="_3bOuDw7nEeGoWoGzNid8xQ" bindingContext="_3bOuDg7nEeGoWoGzNid8xQ">
+    <bindings xmi:id="_3bOuCA7nEeGoWoGzNid8xQ" keySequence="Ctrl+Q" command="_3bOuGw7nEeGoWoGzNid8xQ"/>
+    <bindings xmi:id="_3bOuCQ7nEeGoWoGzNid8xQ" keySequence="Ctrl+O" command="_3bOuAQ7nEeGoWoGzNid8xQ"/>
+    <bindings xmi:id="_3bOuIQ7nEeGoWoGzNid8xQ" keySequence="Ctrl+S" command="_3bOuFQ7nEeGoWoGzNid8xQ"/>
+    <bindings xmi:id="_3bOuBA7nEeGoWoGzNid8xQ" keySequence="Ctrl+A" command="_3bOuJA7nEeGoWoGzNid8xQ"/>
+  </bindingTables>
+  <rootContext xmi:id="_3bOuDg7nEeGoWoGzNid8xQ" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_3bOuHA7nEeGoWoGzNid8xQ" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_3bOuKQ7nEeGoWoGzNid8xQ" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <commands xmi:id="_3bOuGw7nEeGoWoGzNid8xQ" elementId="edu.tum.in.bruegge.demo_wo_fragment.quitCommand" commandName="quitCommand"/>
+  <commands xmi:id="_3bOuAQ7nEeGoWoGzNid8xQ" elementId="edu.tum.in.bruegge.demo_wo_fragment.openCommand" commandName="openCommand"/>
+  <commands xmi:id="_3bOuFQ7nEeGoWoGzNid8xQ" elementId="edu.tum.in.bruegge.demo_wo_fragment.saveCommand" commandName="saveCommand"/>
+  <commands xmi:id="_3bOuJA7nEeGoWoGzNid8xQ" elementId="edu.tum.in.bruegge.demo_wo_fragment.aboutCommand" commandName="aboutCommand"/>
+  <commands xmi:id="_3bOuBQ7nEeGoWoGzNid8xQ" elementId="edu.tum.in.bruegge.epd.update" commandName="Update"/>
+  <addons xmi:id="_3bOuBg7nEeGoWoGzNid8xQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="platform:/plugin/org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_3bOuEg7nEeGoWoGzNid8xQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="platform:/plugin/org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_3bOuDQ7nEeGoWoGzNid8xQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="platform:/plugin/org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_3bOuGg7nEeGoWoGzNid8xQ" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="platform:/plugin/org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_3bOuEQ7nEeGoWoGzNid8xQ" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="platform:/plugin/org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_3bOuIg7nEeGoWoGzNid8xQ" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="platform:/plugin/org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+</application:Application>

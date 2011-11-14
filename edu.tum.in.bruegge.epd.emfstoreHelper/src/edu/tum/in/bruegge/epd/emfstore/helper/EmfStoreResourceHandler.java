@@ -1,11 +1,9 @@
-package edu.tum.in.bruegge.epd.emfstore4appmodel;
+package edu.tum.in.bruegge.epd.emfstore.helper;
 
 import java.io.IOException;
 
 import javax.inject.Inject;
 
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.services.log.Logger;
@@ -19,8 +17,6 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.emfstore.client.model.ProjectSpace;
-
-import edu.tum.in.bruegge.epd.emfstore.helper.EmfStoreHelper;
 
 public class EmfStoreResourceHandler implements IModelResourceHandler {
 	

@@ -11,52 +11,79 @@
             id="edu.tum.in.brueege.epd.emfStoreCommit"
             name="Commit">
       </command>
+      <command
+            id="edu.tum.in.brueege.epd.emfStoreShare"
+            name="Share">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="false"
             locationURI="popup:org.eclipse.jdt.ui.PackageExplorer">
-         <command
-               commandId="edu.tum.in.brueege.epd.emfStoreUpdate"
-               style="push">
-            <visibleWhen
-                  checkEnabled="false">
-               <with
-                     variable="selection">
-                  <iterate
-                        ifEmpty="false">
-                     <adapt
-                           type="org.eclipse.core.resources.IResource">
-                        <test
-                              property="org.eclipse.core.resources.name"
-                              value="*.e4xmi">
-                        </test>
-                     </adapt>
-                  </iterate>
-               </with>
-            </visibleWhen>
-         </command>
-         <command
-               commandId="edu.tum.in.brueege.epd.emfStoreCommit"
-               style="push">
-            <visibleWhen
-                  checkEnabled="false">
-               <with
-                     variable="selection">
-                  <iterate
-                        ifEmpty="false">
-                     <adapt
-                           type="org.eclipse.core.resources.IResource">
-                        <test
-                              property="org.eclipse.core.resources.name"
-                              value="*.e4xmi">
-                        </test>
-                     </adapt>
-                  </iterate>
-               </with>
-            </visibleWhen>
-         </command>
+         <menu
+               label="EmfStore e4">
+            <command
+                  commandId="edu.tum.in.brueege.epd.emfStoreUpdate"
+                  style="push">
+               <visibleWhen
+                     checkEnabled="false">
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.eclipse.core.resources.IResource">
+                           <test
+                                 property="org.eclipse.core.resources.name"
+                                 value="*.e4xmi">
+                           </test>
+                        </adapt>
+                     </iterate>
+                  </with>
+               </visibleWhen>
+            </command>
+            <command
+                  commandId="edu.tum.in.brueege.epd.emfStoreCommit"
+                  style="push">
+               <visibleWhen
+                     checkEnabled="false">
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.eclipse.core.resources.IResource">
+                           <test
+                                 property="org.eclipse.core.resources.name"
+                                 value="*.e4xmi">
+                           </test>
+                        </adapt>
+                     </iterate>
+                  </with>
+               </visibleWhen>
+            </command>
+            <command
+                  commandId="edu.tum.in.brueege.epd.emfStoreShare"
+                  style="push">
+               <visibleWhen
+                     checkEnabled="false">
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <adapt
+                              type="org.eclipse.core.resources.IResource">
+                           <test
+                                 property="org.eclipse.core.resources.name"
+                                 value="*.e4xmi">
+                           </test>
+                        </adapt>
+                     </iterate>
+                  </with>
+               </visibleWhen>
+            </command>
+         </menu>
       </menuContribution>
    </extension>
    <extension
@@ -68,6 +95,10 @@
       <handler
             class="edu.tum.in.bruegge.epd.emfstore.handler.CommitProjectHandler"
             commandId="edu.tum.in.brueege.epd.emfStoreCommit">
+      </handler>
+      <handler
+            class="edu.tum.in.bruegge.epd.emfstore.handler.ShareProjectHandler"
+            commandId="edu.tum.in.brueege.epd.emfStoreShare">
       </handler>
    </extension>
 

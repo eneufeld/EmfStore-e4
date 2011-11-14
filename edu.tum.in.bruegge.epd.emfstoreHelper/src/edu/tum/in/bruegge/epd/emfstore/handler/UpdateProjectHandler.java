@@ -5,6 +5,7 @@ import java.util.List;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.emf.emfstore.client.model.ProjectSpace;
 import org.eclipse.emf.emfstore.client.model.Usersession;
 import org.eclipse.emf.emfstore.client.model.exceptions.ChangeConflictException;
@@ -29,6 +30,7 @@ public class UpdateProjectHandler extends AbstractHandler implements
 		UpdateObserver {
 	private Shell shell;
 
+	@Execute
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		// EmfStoreHelper.INSTANCE.update();
 		shell = HandlerUtil.getActiveShell(event);
@@ -63,7 +65,8 @@ public class UpdateProjectHandler extends AbstractHandler implements
 			projectSpace.getBaseVersion();
 			projectSpace.update(VersionSpec.HEAD_VERSION,
 					UpdateProjectHandler.this);
-
+			if(PlatformUI.getWorkbench()!=null){
+				
 			// explicitly refresh the decorator since no simple attribute has
 			// been changed
 			// (as opposed to committing where the dirty property is being set)
@@ -75,6 +78,7 @@ public class UpdateProjectHandler extends AbstractHandler implements
 							.update("org.eclipse.emf.emfstore.client.ui.decorators.VersionDecorator");
 				}
 			});
+			}
 		} catch (ChangeConflictException e1) {
 			handleChangeConflictException(e1);
 		} catch (NoChangesOnServerException e) {
@@ -114,8 +118,9 @@ public class UpdateProjectHandler extends AbstractHandler implements
 	private Shell getShell() {
 		return shell;
 	}
-	public void setShell(Shell shell){
-		this.shell=shell;
+
+	public void setShell(Shell shell) {
+		this.shell = shell;
 	}
 
 	/**
