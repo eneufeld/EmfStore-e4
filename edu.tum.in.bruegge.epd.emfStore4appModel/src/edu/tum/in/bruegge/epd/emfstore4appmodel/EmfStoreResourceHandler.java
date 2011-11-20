@@ -4,8 +4,6 @@ import java.io.IOException;
 
 import javax.inject.Inject;
 
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.services.log.Logger;
@@ -24,6 +22,8 @@ import edu.tum.in.bruegge.epd.emfstore.helper.EmfStoreHelper;
 
 public class EmfStoreResourceHandler implements IModelResourceHandler {
 	
+	private static final String MODEL_DIRECTORY = System.getProperty("java.io.tmpdir");
+	
 	@Inject
 	private Logger logger;
 	
@@ -39,15 +39,15 @@ public class EmfStoreResourceHandler implements IModelResourceHandler {
 		MApplication appElement = (MApplication) appModel;
 		
 		// Convert XMIResource from EMFStore to E4XMIResource (required by several Eclipse Plugins)
-//		Resource resource = new E4XMIResource(appModel.eResource().getURI());
-		Resource resource = new E4XMIResource(URI.createFileURI("G:/Unicase/temp/model.txt"));
+		//Resource resource = new E4XMIResource(appModel.eResource().getURI());
+		Resource resource = new E4XMIResource(URI.createFileURI(MODEL_DIRECTORY + "model.txt"));
 		resource.getContents().add(appModel);
+		
+		logger.info("E4XMIResource URI: " + appModel.eResource().getURI().toString());
 		
 		// Add resource to ResourceSet (required by Eclipse Plugins)
 		ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.getResources().add(resource);
-		
-		logger.info("EMFStore Resource URI: " + appModel.eResource().getURI().toString());
 		
 		// Put Application Model into Context
 		this.context.set(MApplication.class, appElement);

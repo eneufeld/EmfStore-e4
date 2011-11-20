@@ -1,6 +1,5 @@
 package edu.tum.in.bruegge.epd.emfstore.helper;
 
-import java.io.IOException;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -10,27 +9,22 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.e4.core.services.log.Logger;
 import org.eclipse.e4.ui.internal.workbench.E4XMIResourceFactory;
-import org.eclipse.e4.ui.internal.workbench.URIHelper;
-import org.eclipse.e4.ui.model.application.MApplicationElement;
 import org.eclipse.e4.ui.model.application.commands.impl.CommandsPackageImpl;
 import org.eclipse.e4.ui.model.application.impl.ApplicationPackageImpl;
 import org.eclipse.e4.ui.model.application.ui.advanced.impl.AdvancedPackageImpl;
 import org.eclipse.e4.ui.model.application.ui.basic.impl.BasicPackageImpl;
 import org.eclipse.e4.ui.model.application.ui.impl.UiPackageImpl;
 import org.eclipse.e4.ui.model.application.ui.menu.impl.MenuPackageImpl;
-import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 import org.eclipse.emf.emfstore.client.model.ModelFactory;
 import org.eclipse.emf.emfstore.client.model.ProjectSpace;
 import org.eclipse.emf.emfstore.client.model.ServerInfo;
 import org.eclipse.emf.emfstore.client.model.Usersession;
+import org.eclipse.emf.emfstore.client.model.Workspace;
 import org.eclipse.emf.emfstore.client.model.WorkspaceManager;
 import org.eclipse.emf.emfstore.common.model.util.ModelUtil;
 import org.eclipse.emf.emfstore.server.exceptions.EmfStoreException;
@@ -39,11 +33,10 @@ import org.eclipse.emf.emfstore.server.model.ProjectInfo;
 import edu.tum.in.bruegge.epd.emfstorehelper.Activator;
 
 /**
+ * Helper class for e4 Application
  * 
- * @author Eugen Neufeld Helper class for e4 Application
- * 
+ * @author Eugen Neufeld
  */
-
 public class EmfStoreHelper {
 
 	public static EmfStoreHelper INSTANCE = new EmfStoreHelper();
@@ -52,18 +45,18 @@ public class EmfStoreHelper {
 	private Usersession userSession;
 
 	private ResourceSetImpl resourceSetImpl;
+	
 	@Inject
 	private Logger logger;
 
 	private EmfStoreHelper() {
 		initResourceSet();
 		try {
-			userSession = WorkspaceManager.getInstance().getCurrentWorkspace()
-					.getUsersessions().get(0);
+			Workspace workspace = WorkspaceManager.getInstance().getCurrentWorkspace();
+			userSession = workspace.getUsersessions().get(0);
 			userSession.logIn();
 
-			for (ProjectSpace ps : WorkspaceManager.getInstance()
-					.getCurrentWorkspace().getProjectSpaces()) {
+			for (ProjectSpace ps : workspace.getProjectSpaces()) {
 				// TODO check if project already here
 				// projectSpace=ps;
 			}
@@ -78,14 +71,12 @@ public class EmfStoreHelper {
 
 				ProjectInfo relevant = null;
 				for (ProjectInfo info : projects) {
-					// TODO do some chekcing
+					// TODO do some checking
 					relevant = info;
 					break;
 				}
 				if (relevant != null) {
-					projectSpace = WorkspaceManager.getInstance()
-							.getCurrentWorkspace()
-							.checkout(userSession, relevant);
+					projectSpace = workspace.checkout(userSession, relevant);
 				}
 			}
 		} catch (EmfStoreException e) {
@@ -162,8 +153,6 @@ public class EmfStoreHelper {
 		}
 	}
 
-	
-
 	public ProjectSpace getProjectSpace() {
 		return projectSpace;
 	}
@@ -215,7 +204,6 @@ public class EmfStoreHelper {
 					.getMessage()));
 		}
 	}
-	
 
 	public void setUserSession(Usersession userSession) {
 		this.userSession = userSession;

@@ -3,7 +3,6 @@ Bundle-ManifestVersion: 2
 Bundle-Name: EmfStore4AppModel
 Bundle-SymbolicName: edu.tum.in.bruegge.epd.emfStore4appModel;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: edu.tum.in.bruegge.epd.emfstore4appmodel.Activator
 Export-Package: edu.tum.in.bruegge.epd.emfstore4appmodel;
   uses:="org.eclipse.emf.ecore.resource,
    org.eclipse.ui.plugin,
